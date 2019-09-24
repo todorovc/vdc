@@ -22,6 +22,7 @@ do az group create --location westeurope --name VDC-$rg
 done
 
 ----Accept the Cisco CSR 1000v Marketplace terms
+
 for urn in $(az vm image list --all --publisher cisco --offer cisco-csr-1000v --sku 16_6 --query '[].urn' --output tsv)
 
 do az vm image accept-terms --urn $urn
