@@ -8,7 +8,9 @@ The Jekyll rendered Citadel pages can be found at <https://aka.ms/citadel/vdc>.
 
 -----------------
 az login
+
 az account show --output jsonc
+
 az account list --output table
 
 az provider register --namespace Microsoft.Insights
