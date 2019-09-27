@@ -17,11 +17,9 @@ az provider register --namespace Microsoft.Insights
 
 az provider show --namespace Microsoft.Insights --query registrationState --output tsv
 
-for rg in Hub Spoke1 Spoke2 OnPrem NVA
+for rg in Hub Spoke1 Spoke2 OnPrem NVA;  do az group create --location westeurope --name VDC-$rg --tag test-$rg;  done
 
-do az group create --location westeurope --name VDC-$rg
 
-done
 
 ----Accept the Cisco CSR 1000v Marketplace terms
 
@@ -37,6 +35,7 @@ az group deployment list -g VDC-Hub -o table
 master=https://raw.githubusercontent.com/todorovc/vdc/master/DeployVDCwithNVA.json
 
 az group deployment create --name VDC-Create --resource-group VDC-Hub --template-uri $master --verbose
+
 
 
 
