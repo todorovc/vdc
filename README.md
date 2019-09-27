@@ -34,7 +34,8 @@ az group deployment list -g VDC-Hub -o table
 -----Deploy the ARM template  around 45 minutes
 master=https://raw.githubusercontent.com/todorovc/vdc/master/DeployVDCwithNVA.json
 
-az group deployment create --name VDC-Create --resource-group VDC-Hub --template-uri $master --verbose
+az group deployment create --name VDC-Create --resource-group VDC-Hub --template-uri $master --verbose --no-wait
+
 
 
 
